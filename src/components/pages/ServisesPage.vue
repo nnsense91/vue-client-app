@@ -1,4 +1,4 @@
-<template></template>
+<template>ServicesPage</template>
 
 <script>
 export default {
