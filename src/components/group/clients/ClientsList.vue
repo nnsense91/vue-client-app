@@ -1,11 +1,13 @@
 <template>
-  <ul class="clients-list">
-    <client-item
-      v-for="client in clientsArr"
-      :client="client"
-      :key="client.id"
-    />
-  </ul>
+  <div class="clients">
+    <ul class="clients__list">
+      <client-item
+        v-for="client in clientsArr"
+        :client="client"
+        :key="client.id"
+      />
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -21,4 +23,10 @@ const props = defineProps<IClientsListProps>();
 const { clientsArr } = toRefs(props);
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.clients__title {
+  font-size: 2rem;
+  text-align: center;
+  color: $color-primary-2;
+}
+</style>

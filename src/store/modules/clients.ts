@@ -34,5 +34,16 @@ export default {
         console.error(e);
       }
     },
+    async addClientAction(store: IContext, client: IClientModel) {
+      try {
+        const data = await fetch("http://localhost:3091/clients", {
+          method: "POST",
+          body: JSON.stringify(client),
+        }).then((response) => response.json());
+        console.log(data);
+      } catch (e) {
+        console.error(e);
+      }
+    },
   },
 };

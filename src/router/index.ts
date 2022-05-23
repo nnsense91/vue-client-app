@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import MainPage from "@/components/pages/MainPage.vue";
+import MainPage from "@/components/pages/HomePage.vue";
 import ClientsPage from "@/components/pages/ClientsPage.vue";
 import ServicesPage from "@/components/pages/ServicesPage.vue";
 

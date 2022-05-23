@@ -6,6 +6,14 @@
   font-family: "Gill Sans", sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 li {
   list-style: none;
 }
