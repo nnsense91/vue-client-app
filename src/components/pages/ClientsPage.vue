@@ -1,6 +1,6 @@
 <template>
   <div class="clients-page__wrap">
-    <clients-list :clientsArr="clientsArr" />
+    <clients-list v-if="clientsArr.length" :clientsArr="clientsArr" />
   </div>
 </template>
 

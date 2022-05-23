@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { IClientModel } from "@/store/modules/clients";
-import { defineProps, toRefs } from "vue";
+import { toRefs } from "vue";
 
 interface IClientItemProps {
   client: IClientModel;
@@ -15,9 +15,7 @@ interface IClientItemProps {
 export default {
   name: "ClientItem",
   props: {
-    client: {
-      type: Object as () => IClientModel,
-    },
+    client: Object,
   },
   setup(props: IClientItemProps) {
     const { id, name, lastName } = toRefs(props.client);
