@@ -2,15 +2,11 @@
   <div class="logo" @click="returnHome">Client-App</div>
 </template>
 
-<script>
-export default {
-  name: "LogoComponent",
-  methods: {
-    returnHome() {
-      return this.$router.push("/");
-    },
-  },
-};
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const returnHome = () => router.push("/");
 </script>
 
 <style lang="scss" scoped>

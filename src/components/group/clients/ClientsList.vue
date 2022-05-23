@@ -8,22 +8,17 @@
   </ul>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { IClientModel } from "@/store/modules/clients";
 import ClientItem from "@/components/group/clients/components/ClientItem.vue";
+import { defineProps, toRefs } from "vue";
 
-export default {
-  name: "ClientsList",
-  components: {
-    ClientItem,
-  },
-  props: {
-    clientsArr: {
-      type: Array as () => IClientModel[],
-      required: true,
-    },
-  },
-};
+interface IClientsListProps {
+  clientsArr: IClientModel[];
+}
+
+const props = defineProps<IClientsListProps>();
+const { clientsArr } = toRefs(props);
 </script>
 
 <style scoped></style>

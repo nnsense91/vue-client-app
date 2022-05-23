@@ -1,4 +1,10 @@
-<template>{{ servicesList }}</template>
+<template>
+  <section class="services-page">
+    <div class="container">
+      {{ servicesList }}
+    </div>
+  </section>
+</template>
 
 <script setup lang="ts">
 import { useStore } from "vuex";

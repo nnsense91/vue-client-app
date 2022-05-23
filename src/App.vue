@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import AppHeader from "@/components/layout/Header";
+import AppHeader from "@/components/layout/AppHeader.vue";
 
 export default {
   name: "AppComponent",
@@ -13,3 +13,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.container {
+  padding: 3% 3%;
+  margin: 0 auto;
+  width: 80%;
+}
+</style>

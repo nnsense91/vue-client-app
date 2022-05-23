@@ -1,9 +1,9 @@
-<template>123</template>
+<template>
+  <div class="container">
+    <section class="home-page">HomePage</section>
+  </div>
+</template>
 
-<script>
-export default {
-  name: "MainPage",
-};
-</script>
+<script lang="ts"></script>
 
 <style lang="scss" scoped></style>

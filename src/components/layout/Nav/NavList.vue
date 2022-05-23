@@ -11,19 +11,14 @@
   </nav>
 </template>
 
-<script>
-import NavItem from "@/components/layout/Nav/components/NavItem";
-export default {
-  name: "NavComponent",
-  components: {
-    NavItem,
-  },
-  computed: {
-    routes() {
-      return this.$router.options.routes;
-    },
-  },
-};
+<script setup lang="ts">
+import NavItem from "@/components/layout/Nav/components/NavItem.vue";
+import { computed } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const routes = computed(() => router.options.routes);
 </script>
 
 <style lang="scss" scoped>
