@@ -4,29 +4,16 @@
   <div>{{ lastName }}</div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { IClientModel } from "@/store/modules/clients";
-import { toRefs } from "vue";
+import { defineProps, toRefs } from "vue";
 
 interface IClientItemProps {
   client: IClientModel;
 }
 
-export default {
-  name: "ClientItem",
-  props: {
-    client: Object,
-  },
-  setup(props: IClientItemProps) {
-    const { id, name, lastName } = toRefs(props.client);
-
-    return {
-      id,
-      name,
-      lastName,
-    };
-  },
-};
+const props = defineProps<IClientItemProps>();
+const { id, name, lastName } = toRefs(props.client);
 </script>
 
 <style scoped></style>
