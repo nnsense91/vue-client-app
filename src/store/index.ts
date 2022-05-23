@@ -1,6 +1,12 @@
 import { createStore } from "vuex";
-import clientStore from "./modules/clients";
+import clientsStore, { IClientsState } from "./modules/clients";
+import servicesStore, { IServiceState } from "./modules/services";
 
-export default createStore({
-  modules: { clientStore },
+export interface IState {
+  clientsStore: IClientsState;
+  servicesStore: IServiceState;
+}
+
+export default createStore<IState>({
+  modules: { clientsStore, servicesStore },
 });
