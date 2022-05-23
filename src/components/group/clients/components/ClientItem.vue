@@ -11,8 +11,6 @@
 <script setup lang="ts">
 import { IClientModel } from "@/store/modules/clients";
 import { defineProps, toRefs } from "vue";
-import AddButton from "@/components/UI/AddButton.vue";
-import RemoveButton from "@/components/UI/RemoveButton.vue";
 
 interface IClientItemProps {
   client: IClientModel;

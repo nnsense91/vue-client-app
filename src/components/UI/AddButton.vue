@@ -4,7 +4,11 @@
   </button>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+export default {
+  name: "AddButton",
+};
+</script>
 
 <style lang="scss" scoped>
 .add-button {

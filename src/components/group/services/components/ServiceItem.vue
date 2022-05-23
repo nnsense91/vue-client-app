@@ -12,8 +12,6 @@
 <script setup lang="ts">
 import { defineProps, toRefs } from "vue";
 import { IServiceModel } from "@/store/modules/services";
-import AddButton from "@/components/UI/AddButton.vue";
-import RemoveButton from "@/components/UI/RemoveButton.vue";
 
 interface IServiceItemProps {
   service: IServiceModel;
