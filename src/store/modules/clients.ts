@@ -22,6 +22,14 @@ export default {
     SET_CLIENTS(state: IClientsState, clientsArr: IClientModel[]) {
       state.clientsArr = clientsArr;
     },
+    ADD_NEW_CLIENT(state: IClientsState, client: IClientModel) {
+      state.clientsArr.push(client);
+    },
+    REMOVE_CLIENT(state: IClientsState, removedId: IClientModel["id"]) {
+      state.clientsArr = state.clientsArr.filter((client) => {
+        return client.id !== removedId;
+      });
+    },
   },
   actions: {
     async getClientsAction(store: IContext) {
@@ -36,11 +44,27 @@ export default {
     },
     async addClientAction(store: IContext, client: IClientModel) {
       try {
-        const data = await fetch("http://localhost:3091/clients", {
-          method: "POST",
-          body: JSON.stringify(client),
+        const data: IClientModel = await fetch(
+          "http://localhost:3091/clients",
+          {
+            method: "POST",
+            body: JSON.stringify(client),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        ).then((response) => response.json());
+        store.commit("ADD_NEW_CLIENT", data);
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    async removeClientAction(store: IContext, id: IClientModel["id"]) {
+      try {
+        await fetch(`http://localhost:3091/clients/${id}`, {
+          method: "DELETE",
         }).then((response) => response.json());
-        console.log(data);
+        store.commit("REMOVE_CLIENT", id);
       } catch (e) {
         console.error(e);
       }
