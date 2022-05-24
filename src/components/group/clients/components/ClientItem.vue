@@ -32,23 +32,23 @@ const removeClient = async () =>
   padding: 1rem;
   width: 100%;
   border-bottom: 1px solid $color-primary-3;
-}
-.client__data {
-  display: flex;
-  width: 80%;
-}
-.client__item {
-  color: $color-primary-2;
-}
-.client__name {
-  min-width: 10%;
-}
-.client__lastname {
-  min-width: 15%;
-}
-.client__controls {
-  width: 5%;
-  display: flex;
-  justify-content: space-around;
+  &__data {
+    display: flex;
+    width: 80%;
+  }
+  &__item {
+    color: $color-primary-2;
+  }
+  &__name {
+    min-width: 10%;
+  }
+  &__lastname {
+    min-width: 15%;
+  }
+  &__controls {
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 </style>

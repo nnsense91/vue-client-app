@@ -23,13 +23,13 @@ const { appTitle } = toRefs(props);
   padding: 1rem;
   min-height: 90%;
   border-radius: 1rem;
-}
-.section__title {
-  position: absolute;
-  right: 5%;
-  top: -0.65rem;
-  background-color: #fff;
-  padding: 0 1rem;
-  color: $color-primary-2;
+  &__title {
+    position: absolute;
+    right: 5%;
+    top: -0.65rem;
+    background-color: #fff;
+    padding: 0 1rem;
+    color: $color-primary-2;
+  }
 }
 </style>

@@ -27,26 +27,26 @@ const { name, description, price } = toRefs(props.service);
   padding: 1rem;
   width: 100%;
   border-bottom: 1px solid $color-primary-3;
-}
-.service__row {
-  display: flex;
-  width: 80%;
-}
-.service__item {
-  color: $color-primary-2;
-}
-.service__name {
-  width: 10%;
-}
-.service__description {
-  width: 30%;
-}
-.service__price {
-  width: 5%;
-}
-.service__controls {
-  width: 5%;
-  display: flex;
-  justify-content: space-around;
+  &__row {
+    display: flex;
+    width: 80%;
+  }
+  &__item {
+    color: $color-primary-2;
+  }
+  &__name {
+    width: 10%;
+  }
+  &__description {
+    width: 30%;
+  }
+  &__price {
+    width: 5%;
+  }
+  &__controls {
+    width: 5%;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 </style>

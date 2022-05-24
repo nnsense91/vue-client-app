@@ -24,9 +24,11 @@ const { clientsArr } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
-.clients__title {
-  font-size: 2rem;
-  text-align: center;
-  color: $color-primary-2;
+.clients {
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+    color: $color-primary-2;
+  }
 }
 </style>
