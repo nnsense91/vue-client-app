@@ -1,7 +1,11 @@
 <template>
   <app-section appTitle="Список клиентов" class="clients-page">
-    <app-button class="add-button" @click="openAddDialog">Добавить</app-button>
-    <clients-list v-if="clientsArr.length" :clientsArr="clientsArr" />
+    <app-button @click="openAddDialog">Добавить</app-button>
+    <clients-list
+      class="clients-list"
+      v-if="clientsArr.length"
+      :clientsArr="clientsArr"
+    />
   </app-section>
   <app-dialog dialogTitle="Добавить клиента" v-model:show="isAddDialogShow">
     <add-client :closeAddDialog="closeAddDialog" :addNewClient="addNewClient" />
@@ -37,7 +41,7 @@ onBeforeMount(async () => await getClients());
 </script>
 
 <style scoped>
-.add-button {
-  margin-bottom: 1rem;
+.clients-list {
+  margin-top: 1rem;
 }
 </style>

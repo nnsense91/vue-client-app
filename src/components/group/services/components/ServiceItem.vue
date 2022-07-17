@@ -2,14 +2,17 @@
   <div class="service">
     <div class="service__row">
       <div class="service__item service__name">{{ name }}</div>
-      <div class="service__item service__description">{{ description }}</div>
       <div class="service__item service__price">{{ price }}р.</div>
+      <div class="service__item service__description">{{ description }}</div>
     </div>
-    <div class="service__controls"><add-button /><remove-button /></div>
+    <div class="service__controls">
+      <remove-button @click="removeService" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useStore } from "vuex";
 import { defineProps, toRefs } from "vue";
 import { IServiceModel } from "@/store/modules/services";
 
@@ -17,8 +20,12 @@ interface IServiceItemProps {
   service: IServiceModel;
 }
 
+const store = useStore();
 const props = defineProps<IServiceItemProps>();
-const { name, description, price } = toRefs(props.service);
+const { id, name, description, price } = toRefs(props.service);
+
+const removeService = async () =>
+  store.dispatch("servicesStore/removeServiceAction", id.value);
 </script>
 
 <style lang="scss" scoped>
@@ -33,12 +40,17 @@ const { name, description, price } = toRefs(props.service);
   }
   &__item {
     color: $color-primary-2;
+
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
   }
   &__name {
-    width: 10%;
+    min-width: 10%;
   }
   &__description {
-    width: 30%;
+    min-width: 30%;
+    flex-grow: 1;
   }
   &__price {
     width: 5%;

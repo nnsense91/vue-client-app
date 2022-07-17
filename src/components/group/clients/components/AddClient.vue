@@ -9,10 +9,12 @@
       <div class="add-client__data">
         <label class="add-client__label">
           <input
+            v-focus
             v-model="nameValue"
             class="add-client__input"
             placeholder="Имя"
             type="text"
+            required
           />
         </label>
         <label class="add-client__label">

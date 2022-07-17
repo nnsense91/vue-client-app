@@ -38,6 +38,10 @@ const removeClient = async () =>
   }
   &__item {
     color: $color-primary-2;
+
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
   }
   &__name {
     min-width: 10%;
