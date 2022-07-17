@@ -1,6 +1,12 @@
 <template>
-  <div class="dialog" v-if="show" @click="closeDialog">
-    <div class="dialog__wrap" @click.stop>
+  <div
+    class="dialog"
+    v-if="show"
+    @mousedown="isClosing = $event.target === $el"
+    @mouseup.self="isClosing && closeDialog()"
+    @keydown.esc="closeDialog"
+  >
+    <div class="dialog__wrap">
       <div class="dialog__header">{{ dialogTitle }}</div>
       <div class="dialog__content">
         <slot></slot>
@@ -10,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, toRefs } from "vue";
+import { defineProps, defineEmits, toRefs, ref } from "vue";
 interface IAppPopup {
   show: boolean;
   dialogTitle: string;
@@ -18,7 +24,13 @@ interface IAppPopup {
 const props = defineProps<IAppPopup>();
 const emit = defineEmits(["update:show"]);
 const { show = false, dialogTitle = "" } = toRefs(props);
-const closeDialog = () => emit("update:show", false);
+const isClosing = ref(false);
+const closeDialog = () => {
+  emit("update:show", false);
+};
+const testFn = () => {
+  console.log("esc");
+};
 </script>
 
 <style lang="scss" scoped>
